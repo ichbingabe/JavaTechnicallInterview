@@ -7,11 +7,13 @@ public class CountChar {
 
 
     public static void main(String[] args) {
+
         Scanner textReader = new Scanner(System.in);
         System.out.println("Your Input: ");
         String text = textReader.nextLine();
         String textWithoutNumbers = text.replaceAll("\\d+", "");
         new CountChar(textWithoutNumbers);
+
     }
 
     private CountChar(String text){
@@ -20,16 +22,16 @@ public class CountChar {
     }
 
     private void printResult(){
-        System.out.println("-----------");
-
         for(Character i: characterArrayList){
-            System.out.println(i + " - " + quantity.get(characterArrayList.indexOf(i)));
+            System.out.println(i + " : " + quantity.get(characterArrayList.indexOf(i)));
         }
     }
 
     private void count(String text){
         characterArrayList = new ArrayList();
         quantity = new ArrayList<>();
+
+        System.out.println("Original String: " + text);
 
         for (Character i: text.toCharArray()){
             i = Character.toLowerCase(i);
